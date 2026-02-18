@@ -16,6 +16,7 @@ function App() {
       {
         ...siteContent.safetyToolkit[0],
         image: tool1,
+        mobileTitle: 'Privacy',
         detailTitle: 'Privacy Check',
         detailText:
           'Review profile visibility, remove sensitive public info, and enable two-factor authentication across your accounts.',
@@ -23,6 +24,7 @@ function App() {
       {
         ...siteContent.safetyToolkit[1],
         image: tool2,
+        mobileTitle: 'Block & Report',
         detailTitle: 'Block & Report',
         detailText:
           'Use platform safety tools immediately. Document harmful activity and report repeat behavior with screenshots and timestamps.',
@@ -30,6 +32,7 @@ function App() {
       {
         ...siteContent.safetyToolkit[2],
         image: tool3,
+        mobileTitle: 'Legal Rights',
         detailTitle: 'Legal Rights',
         detailText:
           'If someone shares private content without permission or stalks online, you can seek legal help and file a formal complaint.',
@@ -37,6 +40,7 @@ function App() {
       {
         ...siteContent.safetyToolkit[3],
         image: tool4,
+        mobileTitle: 'Support',
         detailTitle: 'Get Support',
         detailText:
           'Talk to trusted people, reach support networks, and use helplines. Safety improves when you do not handle abuse alone.',
@@ -55,12 +59,17 @@ function App() {
       <main className="relative z-10 w-full">
         {page === 'hero' && (
           <section className="page-fade flex flex-col gap-5 px-4 pb-8 pt-4 md:px-8 md:pb-10">
-            <div className="soft-ring overflow-hidden rounded-forme-arch h-[56vh] min-h-[380px] md:min-h-[560px]">
+            <div className="soft-ring relative overflow-hidden rounded-forme-arch h-[48vh] min-h-[300px] md:h-[56vh] md:min-h-[560px]">
               <img
                 src={heroImg}
                 alt="Secure digital life"
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/30 to-transparent px-4 pb-5 pt-10">
+                <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/85">
+                  Safety Starts Here
+                </p>
+              </div>
             </div>
             <div className="rounded-forme-card border border-forme-brown/10 bg-forme-beige/70 p-5 text-center text-lg italic tracking-wide text-forme-brown/95 shadow-sm">
               "{siteContent.hero.tagline}"
@@ -92,6 +101,15 @@ function App() {
               <p className="max-w-2xl text-xl leading-relaxed text-forme-brown/75">{siteContent.hero.description}</p>
             </div>
 
+            <div className="soft-ring rounded-[30px] border border-forme-brown/10 bg-[#efe3db] p-5 md:p-6">
+              <h3 className="text-xl font-display md:text-2xl">Quick Safety Steps</h3>
+              <ul className="mt-3 space-y-1 text-sm font-semibold text-forme-brown/80 md:text-base">
+                <li>1. Save evidence: screenshots, profile links, and timestamps.</li>
+                <li>2. Block and report abusive accounts immediately.</li>
+                <li>3. Share with a trusted person and seek support early.</li>
+              </ul>
+            </div>
+
             <div className="grid grid-cols-2 gap-4 md:gap-5">
               {tools.map((tool) => (
                 <button
@@ -111,7 +129,10 @@ function App() {
                     />
                   </div>
                   <div>
-                    <h3 className="mb-1 text-base font-extrabold uppercase tracking-tight">{tool.title}</h3>
+                    <h3 className="mb-1 truncate whitespace-nowrap text-sm font-extrabold uppercase tracking-tight md:text-base">
+                      <span className="md:hidden">{tool.mobileTitle}</span>
+                      <span className="hidden md:inline">{tool.title}</span>
+                    </h3>
                     <p className="text-sm font-medium leading-tight opacity-70">{tool.desc}</p>
                   </div>
                 </button>
