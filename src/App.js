@@ -35,7 +35,7 @@ function App() {
         mobileTitle: 'Legal Rights',
         detailTitle: 'Legal Rights',
         detailText:
-          'If someone shares private content without permission or stalks online, you can seek legal help and file a formal complaint.',
+          'If someone shares private content without consent, blackmails you, or stalks you online, you can file a complaint with FIA Cyber Crime Wing and local police. Save screenshots, URLs, usernames, and timestamps as evidence before reporting. You can also seek legal aid and request platform takedown of harmful content.',
       },
       {
         ...siteContent.safetyToolkit[3],
@@ -43,7 +43,7 @@ function App() {
         mobileTitle: 'Support',
         detailTitle: 'Get Support',
         detailText:
-          'Talk to trusted people, reach support networks, and use helplines. Safety improves when you do not handle abuse alone.',
+          'Talk to trusted people, reach support networks, and use helplines. Safety improves when you do not handle abuse alone. If you are in immediate danger, contact emergency services first.',
       },
     ],
     []
@@ -65,11 +65,7 @@ function App() {
                 alt="Secure digital life"
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/30 to-transparent px-4 pb-5 pt-10">
-                <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/85">
-                  Safety Starts Here
-                </p>
-              </div>
+              <div className="absolute inset-0 bg-black/15" />
             </div>
             <div className="rounded-forme-card border border-forme-brown/10 bg-forme-beige/70 p-5 text-center text-lg italic tracking-wide text-forme-brown/95 shadow-sm">
               "{siteContent.hero.tagline}"
@@ -99,15 +95,6 @@ function App() {
 
             <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-[#f2e8e2] p-8 md:p-10">
               <p className="max-w-2xl text-xl leading-relaxed text-forme-brown/75">{siteContent.hero.description}</p>
-            </div>
-
-            <div className="soft-ring rounded-[30px] border border-forme-brown/10 bg-[#efe3db] p-5 md:p-6">
-              <h3 className="text-xl font-display md:text-2xl">Quick Safety Steps</h3>
-              <ul className="mt-3 space-y-1 text-sm font-semibold text-forme-brown/80 md:text-base">
-                <li>1. Save evidence: screenshots, profile links, and timestamps.</li>
-                <li>2. Block and report abusive accounts immediately.</li>
-                <li>3. Share with a trusted person and seek support early.</li>
-              </ul>
             </div>
 
             <div className="grid grid-cols-2 gap-4 md:gap-5">
@@ -153,6 +140,21 @@ function App() {
             <div className="relative -mt-14 rounded-t-[46px] bg-forme-brown px-6 pb-12 pt-10 text-forme-beige md:px-10 md:pt-12">
               <h3 className="mb-4 text-5xl font-display leading-[0.95]">{selectedTool.detailTitle}</h3>
               <p className="max-w-3xl text-xl leading-relaxed opacity-90">{selectedTool.detailText}</p>
+
+              {selectedTool.id === 4 && (
+                <div className="mt-6 rounded-3xl border border-forme-beige/20 bg-forme-beige/10 p-5">
+                  <h4 className="text-lg font-bold uppercase tracking-[0.08em]">Pakistan Helplines</h4>
+                  <ul className="mt-3 space-y-2 text-sm leading-relaxed opacity-95 md:text-base">
+                    <li>Police Emergency: 15</li>
+                    <li>Rescue Service: 1122</li>
+                    <li>FIA Cyber Crime Helpline: 1991 / 9911</li>
+                    <li>DRF Cyber Harassment Helpline: 0800-39393</li>
+                    <li>Madadgaar Helpline: 1098</li>
+                  </ul>
+                  <p className="mt-3 text-xs opacity-80">Numbers can vary by region, so verify if a line is unavailable.</p>
+                </div>
+              )}
+
               <div className="mt-9 flex flex-wrap gap-3">
                 <button
                   type="button"
