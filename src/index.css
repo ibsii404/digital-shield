@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 15% 15%, rgb(197 168 152 / 22%) 0%, transparent 38%),
+      radial-gradient(circle at 85% 0%, rgb(61 43 36 / 10%) 0%, transparent 34%),
+      #faf3f0;
+  }
+}
+
+@layer utilities {
+  .soft-ring {
+    box-shadow:
+      0 0 0 1px rgb(61 43 36 / 8%),
+      0 18px 40px -20px rgb(61 43 36 / 45%);
+  }
+
+  .page-fade {
+    animation: page-fade 260ms ease-out;
+  }
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
