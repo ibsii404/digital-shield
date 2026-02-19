@@ -175,7 +175,9 @@ function App() {
         {page === 'hub' && (
           <section className="page-fade flex flex-col gap-6 px-4 pb-8 pt-6 md:px-8 md:pb-12">
             <div className="flex items-center justify-between">
-              <h2 className="text-6xl font-display leading-none whitespace-nowrap md:text-7xl">{copy.safetyHub}</h2>
+              <h2 className="text-6xl font-display font-bold leading-none whitespace-nowrap tracking-[0.04em] md:text-7xl">
+                {copy.safetyHub}
+              </h2>
               <button
                 type="button"
                 onClick={() => setPage('hero')}
@@ -278,7 +280,7 @@ function App() {
 
             <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
               <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
-                <h3 className="text-2xl font-display">{copy.checklistTitle}</h3>
+                <h3 className="text-2xl font-display font-bold tracking-[0.04em]">{copy.checklistTitle}</h3>
                 <p className="mt-2 text-sm text-forme-brown/70">{copy.checklistHint}</p>
                 <div className="mt-5 grid gap-3">
                   {checklistItems.map((item) => (
@@ -307,7 +309,7 @@ function App() {
                   ))}
                 </div>
               </div>
-              <div className="soft-ring flex flex-col justify-between rounded-forme-card border border-forme-brown/10 bg-forme-brown p-7 text-forme-beige md:p-10">
+              <div className="soft-ring flex flex-col justify-between rounded-forme-card border border-forme-brown/10 bg-forme-brown p-8 text-forme-beige md:p-11">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">{copy.safetyScore}</p>
                   <h4 className="mt-3 text-5xl font-display">
@@ -328,7 +330,7 @@ function App() {
 
             <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
               <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
-                <h3 className="text-2xl font-display">{copy.reportTitle}</h3>
+                <h3 className="text-2xl font-display font-bold tracking-[0.04em]">{copy.reportTitle}</h3>
                 <p className="mt-2 text-sm text-forme-brown/70">{copy.reportHint}</p>
                 <div className="mt-5 grid gap-4">
                   <div>
@@ -340,7 +342,7 @@ function App() {
                       type="text"
                       value={reportForm.username}
                       onChange={(event) => setReportForm((prev) => ({ ...prev, username: event.target.value }))}
-                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
+                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:border-forme-brown/40 focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
                       placeholder={isUrdu ? 'مثال: username123' : 'e.g., username123'}
                     />
                   </div>
@@ -353,7 +355,7 @@ function App() {
                       type="text"
                       value={reportForm.platform}
                       onChange={(event) => setReportForm((prev) => ({ ...prev, platform: event.target.value }))}
-                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
+                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:border-forme-brown/40 focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
                       placeholder={isUrdu ? 'مثال: Instagram' : 'e.g., Instagram'}
                     />
                   </div>
@@ -366,7 +368,7 @@ function App() {
                       rows="4"
                       value={reportForm.issue}
                       onChange={(event) => setReportForm((prev) => ({ ...prev, issue: event.target.value }))}
-                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
+                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:border-forme-brown/40 focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
                       placeholder={
                         isUrdu
                           ? 'مثال: میرے اکاؤنٹ کی جعلی پروفائل بنائی گئی۔'
@@ -399,7 +401,7 @@ function App() {
             <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-6 md:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <h3 className="text-2xl font-display">{copy.statsTitle}</h3>
+                  <h3 className="text-2xl font-display font-bold tracking-[0.04em]">{copy.statsTitle}</h3>
                   <p className="mt-2 text-sm text-forme-brown/70">{copy.statsNote}</p>
                 </div>
                 <span className="rounded-full border border-forme-brown/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
@@ -439,7 +441,7 @@ function App() {
 
             <div className="grid gap-6 md:grid-cols-2">
               <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
-                <h3 className="text-2xl font-display">{copy.typesTitle}</h3>
+                <h3 className="text-2xl font-display font-bold tracking-[0.04em]">{copy.typesTitle}</h3>
                 <div className="mt-5 grid gap-3 text-sm text-forme-brown/75">
                   <div className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
                     <strong className="text-forme-brown">Doxxing:</strong> {isUrdu ? 'ذاتی معلومات کی عوامی شیئرنگ۔' : 'Public sharing of private information.'}
@@ -458,8 +460,8 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-forme-brown p-7 text-forme-beige md:p-10">
-                <h3 className="text-2xl font-display">{copy.impactTitle}</h3>
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-forme-brown p-8 text-forme-beige md:p-11">
+                <h3 className="text-2xl font-display font-bold tracking-[0.04em]">{copy.impactTitle}</h3>
                 <ul className="mt-5 grid gap-3 text-sm opacity-90">
                   <li className="rounded-2xl border border-forme-beige/15 bg-forme-beige/10 p-4">
                     {isUrdu
@@ -485,7 +487,7 @@ function App() {
 
             <div className="grid gap-6 md:grid-cols-2">
               <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
-                <h3 className="text-2xl font-display">{copy.resourcesTitle}</h3>
+                <h3 className="text-2xl font-display font-bold tracking-[0.04em]">{copy.resourcesTitle}</h3>
                 <ul className="mt-5 grid gap-3 text-sm text-forme-brown/75">
                   <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4" data-rtl="false">
                     FIA Cyber Crime Wing: https://www.fia.gov.pk
@@ -502,7 +504,7 @@ function App() {
                 </ul>
               </div>
               <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
-                <h3 className="text-2xl font-display">{copy.aboutTitle}</h3>
+                <h3 className="text-2xl font-display font-bold tracking-[0.04em]">{copy.aboutTitle}</h3>
                 <div className="mt-5 grid gap-3 text-sm text-forme-brown/75">
                   <div className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
                     <strong className="text-forme-brown">
