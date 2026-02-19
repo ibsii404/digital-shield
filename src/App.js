@@ -97,8 +97,8 @@ function App() {
     safetyHub: isUrdu ? 'سیفٹی ہب' : 'Safety Hub',
     back: isUrdu ? 'واپس' : 'Back',
     accessibility: isUrdu ? 'رسائی کے اختیارات' : 'Accessibility Controls',
-    urdu: isUrdu ? 'اردو' : 'English',
-    highContrast: isUrdu ? 'ہائی کنٹراسٹ' : 'High Contrast',
+    urdu: isUrdu ? 'English' : 'اردو',
+    highContrast: isUrdu ? 'low Contrast' : 'High Contrast',
     textSize: isUrdu ? 'ٹیکسٹ سائز' : 'Text Size',
     checklistTitle: isUrdu ? 'فوری سیفٹی چیک لسٹ' : 'Quick Safety Checklist',
     checklistHint: isUrdu
@@ -214,7 +214,7 @@ function App() {
                   >
                     {copy.highContrast}
                   </button>
-                  <div className="flex overflow-hidden rounded-full border border-forme-brown/20">
+                  {/* <div className="flex overflow-hidden rounded-full border border-forme-brown/20">
                     <button
                       type="button"
                       onClick={() => setTextScale('base')}
@@ -242,7 +242,7 @@ function App() {
                     >
                       A++
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
