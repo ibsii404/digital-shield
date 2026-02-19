@@ -97,7 +97,7 @@ function App() {
     safetyHub: isUrdu ? 'سیفٹی ہب' : 'Safety Hub',
     back: isUrdu ? 'واپس' : 'Back',
     accessibility: isUrdu ? 'رسائی کے اختیارات' : 'Accessibility Controls',
-    urdu: isUrdu ? 'اردو' : 'Urdu',
+    urdu: isUrdu ? 'اردو' : 'English',
     highContrast: isUrdu ? 'ہائی کنٹراسٹ' : 'High Contrast',
     textSize: isUrdu ? 'ٹیکسٹ سائز' : 'Text Size',
     checklistTitle: isUrdu ? 'فوری سیفٹی چیک لسٹ' : 'Quick Safety Checklist',
@@ -150,7 +150,7 @@ function App() {
 
       <main className="relative z-10 w-full">
         {page === 'hero' && (
-          <section className="page-fade flex flex-col gap-5 px-4 pb-8 pt-4 md:px-8 md:pb-10">
+          <section className="page-fade flex flex-col gap-5 px-4 pb-8 pt-10 md:px-8 md:pb-10 md:pt-12">
             <div className="soft-ring relative overflow-hidden rounded-forme-arch h-[48vh] min-h-[300px] md:h-[56vh] md:min-h-[560px]">
               <img
                 src={heroImg}
