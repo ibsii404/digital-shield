@@ -27,6 +27,7 @@ function App() {
         image: tool1,
         mobileTitle: 'Privacy',
         detailTitle: 'Privacy Check',
+        textClass: 'text-forme-brown',
         detailText:
           'Review profile visibility, remove sensitive public info, and enable two-factor authentication across your accounts.',
       },
@@ -35,6 +36,7 @@ function App() {
         image: tool2,
         mobileTitle: 'Block & Report',
         detailTitle: 'Block & Report',
+        textClass: 'text-forme-brown',
         detailText:
           'Use platform safety tools immediately. On Instagram: Settings → Privacy → Restricted Accounts. On Facebook: Privacy Checkup → Limit Past Posts. On WhatsApp: Settings → Privacy → Profile Photo → My Contacts. Document harmful activity and report repeat behavior with screenshots and timestamps.',
       },
@@ -43,6 +45,7 @@ function App() {
         image: tool3,
         mobileTitle: 'Legal Rights',
         detailTitle: 'Legal Rights',
+        textClass: 'text-forme-brown',
         detailText:
           'If someone shares private content without consent, blackmails you, or stalks you online, you can file a complaint with FIA Cyber Crime Wing and local police. Save screenshots, URLs, usernames, and timestamps as evidence before reporting. You can also seek legal aid and request platform takedown of harmful content.',
       },
@@ -51,6 +54,7 @@ function App() {
         image: tool4,
         mobileTitle: 'Support',
         detailTitle: 'Get Support',
+        textClass: 'text-forme-brown',
         detailText:
           'Talk to trusted people, reach support networks, and use helplines. Safety improves when you do not handle abuse alone. If you are in immediate danger, contact emergency services first.',
       },
@@ -125,7 +129,7 @@ function App() {
     <div
       className={`relative min-h-screen w-full overflow-hidden font-body text-forme-brown ${
         isHighContrast ? 'contrast-high' : ''
-      }`}
+      } ${isUrdu ? 'urdu-mode' : ''}`}
       style={{
         fontSize: textScale === 'xl' ? '20px' : textScale === 'lg' ? '18px' : '16px',
       }}
@@ -139,7 +143,7 @@ function App() {
         onClick={() => {
           window.location.replace('https://www.google.com');
         }}
-        className="fixed right-4 top-4 z-50 rounded-full bg-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-red-700"
+        className="fixed right-4 top-4 z-50 rounded-[28px] bg-red-600 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-xl transition hover:-translate-y-0.5 hover:bg-red-700"
       >
         🔴 {copy.quickExit}
       </button>
@@ -171,7 +175,7 @@ function App() {
         {page === 'hub' && (
           <section className="page-fade flex flex-col gap-6 px-4 pb-8 pt-6 md:px-8 md:pb-12">
             <div className="flex items-center justify-between">
-              <h2 className="text-5xl font-display leading-none md:text-6xl">{copy.safetyHub}</h2>
+              <h2 className="text-6xl font-display leading-none md:text-7xl">{copy.safetyHub}</h2>
               <button
                 type="button"
                 onClick={() => setPage('hero')}
@@ -252,7 +256,7 @@ function App() {
                     setSelectedToolId(tool.id);
                     setPage('detail');
                   }}
-                  className={`${tool.color} soft-ring flex flex-col gap-4 rounded-[40px] p-5 text-left transition duration-300 hover:-translate-y-1 hover:shadow-xl`}
+                  className={`${tool.color} ${tool.textClass} soft-ring flex flex-col gap-4 rounded-[40px] p-5 text-left transition duration-300 hover:-translate-y-1 hover:shadow-xl`}
                 >
                   <div className="aspect-square w-full overflow-hidden rounded-[24px]">
                     <img
@@ -266,14 +270,14 @@ function App() {
                       <span className="md:hidden">{tool.mobileTitle}</span>
                       <span className="hidden md:inline">{tool.title}</span>
                     </h3>
-                    <p className="text-sm font-medium leading-tight opacity-70">{tool.desc}</p>
+                    <p className="text-sm font-medium leading-relaxed opacity-70 break-words">{tool.desc}</p>
                   </div>
                 </button>
               ))}
             </div>
 
             <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-6 md:p-8">
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
                 <h3 className="text-2xl font-display">{copy.checklistTitle}</h3>
                 <p className="mt-2 text-sm text-forme-brown/70">{copy.checklistHint}</p>
                 <div className="mt-5 grid gap-3">
@@ -281,7 +285,9 @@ function App() {
                     <label
                       key={item.id}
                       htmlFor={`check-${item.id}`}
-                      className="flex items-center gap-3 rounded-2xl border border-forme-brown/10 bg-forme-beige/60 px-4 py-3 text-sm font-medium transition hover:-translate-y-0.5 hover:bg-forme-beige"
+                      className={`flex items-center gap-3 rounded-2xl border border-forme-brown/10 bg-forme-beige/60 px-4 py-3 text-sm font-medium transition hover:-translate-y-0.5 hover:bg-forme-beige ${
+                        checklistState[item.id] ? 'checked-tint' : ''
+                      }`}
                     >
                       <input
                         id={`check-${item.id}`}
@@ -301,7 +307,7 @@ function App() {
                   ))}
                 </div>
               </div>
-              <div className="soft-ring flex flex-col justify-between rounded-forme-card border border-forme-brown/10 bg-forme-brown p-6 text-forme-beige md:p-8">
+              <div className="soft-ring flex flex-col justify-between rounded-forme-card border border-forme-brown/10 bg-forme-brown p-7 text-forme-beige md:p-10">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-70">{copy.safetyScore}</p>
                   <h4 className="mt-3 text-5xl font-display">
@@ -321,7 +327,7 @@ function App() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-6 md:p-8">
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
                 <h3 className="text-2xl font-display">{copy.reportTitle}</h3>
                 <p className="mt-2 text-sm text-forme-brown/70">{copy.reportHint}</p>
                 <div className="mt-5 grid gap-4">
@@ -334,7 +340,7 @@ function App() {
                       type="text"
                       value={reportForm.username}
                       onChange={(event) => setReportForm((prev) => ({ ...prev, username: event.target.value }))}
-                      className="mt-2 w-full rounded-2xl border border-forme-brown/15 bg-forme-beige/40 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
+                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
                       placeholder={isUrdu ? 'مثال: username123' : 'e.g., username123'}
                     />
                   </div>
@@ -347,7 +353,7 @@ function App() {
                       type="text"
                       value={reportForm.platform}
                       onChange={(event) => setReportForm((prev) => ({ ...prev, platform: event.target.value }))}
-                      className="mt-2 w-full rounded-2xl border border-forme-brown/15 bg-forme-beige/40 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
+                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
                       placeholder={isUrdu ? 'مثال: Instagram' : 'e.g., Instagram'}
                     />
                   </div>
@@ -360,7 +366,7 @@ function App() {
                       rows="4"
                       value={reportForm.issue}
                       onChange={(event) => setReportForm((prev) => ({ ...prev, issue: event.target.value }))}
-                      className="mt-2 w-full rounded-2xl border border-forme-brown/15 bg-forme-beige/40 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
+                      className="mt-2 w-full rounded-2xl border border-[#d3c6be] bg-forme-beige/40 px-4 py-3 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-forme-brown/30"
                       placeholder={
                         isUrdu
                           ? 'مثال: میرے اکاؤنٹ کی جعلی پروفائل بنائی گئی۔'
@@ -370,7 +376,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-forme-beige/80 p-6 md:p-8">
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-forme-beige/80 p-7 md:p-10">
                 <div className="flex items-center justify-between">
                   <h4 className="text-lg font-semibold uppercase tracking-[0.12em]">
                     {isUrdu ? 'تیار ٹیمپلیٹ' : 'Generated Template'}
@@ -385,6 +391,7 @@ function App() {
                   rows="14"
                   className="mt-4 w-full rounded-3xl border border-forme-brown/15 bg-white/90 px-4 py-3 text-xs leading-relaxed focus:outline-none"
                   aria-label={isUrdu ? 'تیار شکایت' : 'Generated complaint'}
+                  data-rtl="false"
                 />
               </div>
             </div>
@@ -431,7 +438,7 @@ function App() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-6 md:p-8">
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
                 <h3 className="text-2xl font-display">{copy.typesTitle}</h3>
                 <div className="mt-5 grid gap-3 text-sm text-forme-brown/75">
                   <div className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
@@ -451,7 +458,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-forme-brown p-6 text-forme-beige md:p-8">
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-forme-brown p-7 text-forme-beige md:p-10">
                 <h3 className="text-2xl font-display">{copy.impactTitle}</h3>
                 <ul className="mt-5 grid gap-3 text-sm opacity-90">
                   <li className="rounded-2xl border border-forme-beige/15 bg-forme-beige/10 p-4">
@@ -477,24 +484,24 @@ function App() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-6 md:p-8">
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
                 <h3 className="text-2xl font-display">{copy.resourcesTitle}</h3>
                 <ul className="mt-5 grid gap-3 text-sm text-forme-brown/75">
-                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
+                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4" data-rtl="false">
                     FIA Cyber Crime Wing: https://www.fia.gov.pk
                   </li>
-                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
+                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4" data-rtl="false">
                     Digital Rights Foundation Helpline: https://digitalrightsfoundation.pk
                   </li>
-                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
+                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4" data-rtl="false">
                     UN Women Pakistan: https://pakistan.unwomen.org
                   </li>
-                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
+                  <li className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4" data-rtl="false">
                     Legal Aid Society: https://legalaid.org.pk
                   </li>
                 </ul>
               </div>
-              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-6 md:p-8">
+              <div className="soft-ring rounded-forme-card border border-forme-brown/10 bg-white/90 p-7 md:p-10">
                 <h3 className="text-2xl font-display">{copy.aboutTitle}</h3>
                 <div className="mt-5 grid gap-3 text-sm text-forme-brown/75">
                   <div className="rounded-2xl border border-forme-brown/10 bg-forme-beige/60 p-4">
@@ -542,7 +549,7 @@ function App() {
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold uppercase tracking-[0.16em]">{copy.footerContact}</h4>
-                  <p className="mt-2">contact@digitalshield.pk</p>
+                  <p className="mt-2" data-rtl="false">contact@digitalshield.pk</p>
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold uppercase tracking-[0.16em]">{copy.footerSources}</h4>
