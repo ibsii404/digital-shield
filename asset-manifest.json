@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/digital-shield/static/css/main.8bdab392.css",
-    "main.js": "/digital-shield/static/js/main.c873144a.js",
+    "main.js": "/digital-shield/static/js/main.da4b12b6.js",
     "static/js/453.a3a1659e.chunk.js": "/digital-shield/static/js/453.a3a1659e.chunk.js",
     "static/media/hero-arch.jpeg": "/digital-shield/static/media/hero-arch.154aab48797c4e0e810d.jpeg",
     "static/media/spotlight-person.jpeg": "/digital-shield/static/media/spotlight-person.b2746f5e0ff7cd9d2393.jpeg",
@@ -11,11 +11,11 @@
     "static/media/tool-legal.jpeg": "/digital-shield/static/media/tool-legal.192a882e00607092a7d1.jpeg",
     "index.html": "/digital-shield/index.html",
     "main.8bdab392.css.map": "/digital-shield/static/css/main.8bdab392.css.map",
-    "main.c873144a.js.map": "/digital-shield/static/js/main.c873144a.js.map",
+    "main.da4b12b6.js.map": "/digital-shield/static/js/main.da4b12b6.js.map",
     "453.a3a1659e.chunk.js.map": "/digital-shield/static/js/453.a3a1659e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8bdab392.css",
-    "static/js/main.c873144a.js"
+    "static/js/main.da4b12b6.js"
   ]
 }
