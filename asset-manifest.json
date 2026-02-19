@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/digital-shield/static/css/main.03a1a4c9.css",
-    "main.js": "/digital-shield/static/js/main.330e50aa.js",
+    "main.css": "/digital-shield/static/css/main.2174656b.css",
+    "main.js": "/digital-shield/static/js/main.f75594e2.js",
     "static/js/453.a3a1659e.chunk.js": "/digital-shield/static/js/453.a3a1659e.chunk.js",
     "static/media/hero-arch.jpeg": "/digital-shield/static/media/hero-arch.154aab48797c4e0e810d.jpeg",
     "static/media/spotlight-person.jpeg": "/digital-shield/static/media/spotlight-person.b2746f5e0ff7cd9d2393.jpeg",
@@ -10,12 +10,12 @@
     "static/media/tool-support.jpeg": "/digital-shield/static/media/tool-support.a5fcf425ac9f9d3532cb.jpeg",
     "static/media/tool-legal.jpeg": "/digital-shield/static/media/tool-legal.192a882e00607092a7d1.jpeg",
     "index.html": "/digital-shield/index.html",
-    "main.03a1a4c9.css.map": "/digital-shield/static/css/main.03a1a4c9.css.map",
-    "main.330e50aa.js.map": "/digital-shield/static/js/main.330e50aa.js.map",
+    "main.2174656b.css.map": "/digital-shield/static/css/main.2174656b.css.map",
+    "main.f75594e2.js.map": "/digital-shield/static/js/main.f75594e2.js.map",
     "453.a3a1659e.chunk.js.map": "/digital-shield/static/js/453.a3a1659e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03a1a4c9.css",
-    "static/js/main.330e50aa.js"
+    "static/css/main.2174656b.css",
+    "static/js/main.f75594e2.js"
   ]
 }
