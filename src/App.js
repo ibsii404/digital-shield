@@ -98,7 +98,7 @@ function App() {
     back: isUrdu ? 'واپس' : 'Back',
     accessibility: isUrdu ? 'رسائی کے اختیارات' : 'Accessibility Controls',
     urdu: isUrdu ? 'English' : 'اردو',
-    highContrast: isUrdu ? 'low Contrast' : 'High Contrast',
+    highContrast: isUrdu ? 'High Contrast' : 'High Contrast',
     textSize: isUrdu ? 'ٹیکسٹ سائز' : 'Text Size',
     checklistTitle: isUrdu ? 'فوری سیفٹی چیک لسٹ' : 'Quick Safety Checklist',
     checklistHint: isUrdu
@@ -175,7 +175,7 @@ function App() {
         {page === 'hub' && (
           <section className="page-fade flex flex-col gap-6 px-4 pb-8 pt-6 md:px-8 md:pb-12">
             <div className="flex items-center justify-between">
-              <h2 className="text-6xl font-display leading-none md:text-7xl">{copy.safetyHub}</h2>
+              <h2 className="text-6xl font-display leading-none whitespace-nowrap md:text-7xl">{copy.safetyHub}</h2>
               <button
                 type="button"
                 onClick={() => setPage('hero')}
