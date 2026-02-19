@@ -95,7 +95,7 @@ function App() {
     quickExit: isUrdu ? 'فوری ایگزٹ' : 'Quick Exit',
     quickExitHint: isUrdu ? 'فوری طور پر گوگل پر چلے جائیں' : 'Exit instantly to Google',
     safetyHub: isUrdu ? 'سیفٹی ہب' : 'Safety Hub',
-    back: isUrdu ? 'واپس' : 'Back',
+    // back: isUrdu ? 'واپس' : 'Back',
     accessibility: isUrdu ? 'رسائی کے اختیارات' : 'Accessibility Controls',
     urdu: isUrdu ? 'English' : 'اردو',
     highContrast: isUrdu ? 'High Contrast' : 'High Contrast',
