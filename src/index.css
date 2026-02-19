@@ -30,6 +30,21 @@
   .page-fade {
     animation: page-fade 260ms ease-out;
   }
+
+  .contrast-high {
+    background: #ffffff;
+    color: #161616;
+  }
+
+  .contrast-high .soft-ring {
+    box-shadow:
+      0 0 0 2px rgb(0 0 0 / 85%),
+      0 16px 36px -24px rgb(0 0 0 / 50%);
+  }
+
+  .contrast-high button {
+    border-color: #111111;
+  }
 }
 
 @keyframes page-fade {
